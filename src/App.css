@@ -1,0 +1,22 @@
+:root {
+  --nav-h: 5rem;
+}
+
+body {
+  color: white;
+  background-color: #000000;
+}
+
+main {
+  margin-block-end: var(--nav-h);
+}
+
+a {
+  text-decoration: none;
+}
+
+:root p {
+  margin-left: unset;
+  opacity: unset;
+
+}

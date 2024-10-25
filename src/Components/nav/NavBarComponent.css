@@ -1,0 +1,157 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+    color: #ffffff;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.708), rgba(0, 0, 0, 0.44));
+    z-index: 100;
+}
+
+#menuBtn {
+    display: none;
+}
+
+.menu-list {
+    font-size: 40px;
+    display: flex;
+    gap: 10%;
+    gap: calc(7.75vw - 1em);
+    justify-content: center;
+    align-items: center;
+}
+
+.subMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.4%;
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-10px);
+    border: 2px solid rgba(255, 255, 255, 0.358);
+    background-color: rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: 0px 0px 140px -60px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 140px -60px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 140px -60px rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.subMenu.show {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+a:hover {
+    color: #BF94FF;
+}
+
+.subMenu li:hover {
+    color: #BF94FF;
+}
+
+.menu-list li:hover .subMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: initial;
+}
+
+.menu-list > .route {
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+}
+
+
+.route:hover {
+    color: #BF94FF;
+}
+
+.active {
+    color: #BF94FF;
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 2rem);
+        flex-direction: column;
+        background-color: black;
+        padding: 1rem;
+    }
+
+    nav.hide .subMenu,
+    nav.hide .menu-list li:hover .subMenu,
+    nav.hide .menu-list {
+        pointer-events: none;
+    }
+
+    #menuBtn {
+        display: flex;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 40px;
+    }
+
+
+    .subMenu {
+        position: initial;
+        height: 0;
+        opacity: 0;
+    }
+
+    .menu-list > .route {
+        height: inherit;
+        display: initial;
+    }
+
+    .menu-list li:hover .subMenu {
+        height: 4em;
+    }
+
+    nav.hide {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+
+    nav.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .route {
+        margin: 10%;
+        font-size: 40px;
+        position: relative;
+        text-align: center;
+    }
+}

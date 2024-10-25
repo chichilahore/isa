@@ -1,0 +1,53 @@
+.aboutContentPage {
+    display: flex;
+    justify-content: space-evenly;
+    margin-inline: 2em;
+    min-height: 100vh;
+}
+
+.aboutImage {
+    margin-block-start: 5vw;
+    text-align: center;
+}
+
+.aboutImage img {
+    max-width: 30vw;
+    margin: 2em;
+}
+
+.aboutContent {
+    margin-block-start: 16em;
+    color: #ffffff80;
+    text-align: center;
+    margin-inline: 2em;
+}
+
+.aboutContent p {
+    font-family: Helvetica;
+    font-size: 2em;
+}
+
+.navItem.selected {
+    color: #BF94FF;
+}
+
+@media screen and (max-width: 1100px) {
+    .aboutContentPage {
+        margin-inline: 0;
+        flex-flow: column;
+        justify-content: flex-start;
+    }
+
+    .aboutImage img {
+        width: 100%;
+        max-width: 70vmin;
+    }
+
+    .aboutContent {
+        margin-block-start: 0;
+    }
+
+    .aboutContent p {
+        font-size: 1em;
+    }
+}

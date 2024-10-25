@@ -1,0 +1,98 @@
+.artDirectionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  max-width: 80%;
+  overflow-y: auto;
+  height: calc(100vh - 48px);
+  margin: auto;
+}
+
+.titleArtDirections {
+  font-size: 500%;
+  margin: 20px;
+  color: white;
+  text-align: center;
+}
+
+.groupTitle {
+  font-size: 3em;
+  color: white;
+  margin: 0.5em;
+  display: flex;
+}
+
+.imagesContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap; 
+  gap: 2em;
+  width: 100%;
+}
+
+.imagesContainer a {
+  width: calc((100% - 4em) / 3);
+}
+
+.groupImage {
+  width: 100%;
+  opacity: 0.5;
+  border-radius: 6px;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+}
+
+.groupImage:hover {
+  opacity: 1;
+}
+
+/* Para que los videos mantengan el mismo tamaño que las imágenes */
+.groupImage video {
+  width: 100%;
+  border-radius: 6px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.iframeContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 para videos */
+  height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.youtubeIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 600px) {
+  .groupImage {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .groupTitle {
+    font-size: 3em;
+    text-align: start;
+    margin: 0;
+    margin-block: 0.5em;
+  }
+
+  .imagesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagesContainer a {
+    width: 100%;
+  }
+}
